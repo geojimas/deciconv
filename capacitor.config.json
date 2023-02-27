@@ -1,0 +1,6 @@
+{
+  "appId": "com.deciconv.app",
+  "appName": "deciconv",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
