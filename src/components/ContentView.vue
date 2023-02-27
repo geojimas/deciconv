@@ -6,11 +6,12 @@
         style="max-width: auto">
         <div class="w-full">
           <div class="flex items-center flex-col p-5">
-            <h2 class="text-lg font-bold text-gray-800 shadow-xl text-center px-5">Type a Number</h2>
+            <h2 class="text-lg font-bold text-gray-800 shadow-xl text-center px-5">
+              Type a Number
+            </h2>
             <input
-              type="text"
+              type="tel"
               name="number"
-              inputmode="numeric"
               @keypress="onlyNumber"
               v-model.number="decimalNumber"
               @input="calculateNumbers"
@@ -36,7 +37,9 @@
         class="mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800"
         style="max-width: auto">
         <div class="w-full">
-          <p class="text-lg mb-4 font-bold underline text-gray-800 shadow-xl text-center px-5">Result</p>
+          <p class="text-lg mb-4 font-bold underline text-gray-800 shadow-xl text-center px-5">
+            Result
+          </p>
           <h3 class="shadow-xl mb-2">
             Decimal :
             <span class="text-xl text-red-500 font-bold">{{ decimalNumber }}</span>
