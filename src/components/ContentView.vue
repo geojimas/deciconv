@@ -8,8 +8,9 @@
           <div class="flex items-center flex-col p-5">
             <h2 class="text-lg font-bold text-gray-800 shadow-xl text-center px-5">Type a Number</h2>
             <input
-              type="number"
+              type="text"
               name="number"
+              inputmode="numeric"
               @keypress="onlyNumber"
               v-model.number="decimalNumber"
               @input="calculateNumbers"
