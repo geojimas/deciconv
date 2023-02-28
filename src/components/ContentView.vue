@@ -1,11 +1,9 @@
 <template>
-  <div class="mb-auto flex h-screen justify-evenly items-center flex-wrap">
+  <div class="flex h-screen justify-evenly items-center flex-wrap">
     <div class="animate__animated animate__fadeInDown flex items-center justify-center px-5">
-      <div
-        class="rounded-lg bg-white shadow-lg text-gray-800"
-        style="max-width: auto">
+      <div class="rounded-lg bg-white shadow-lg text-gray-800">
         <div class="flex items-center flex-col p-5">
-          <h2 class="text-lg font-bold text-yellow-800 shadow-xl text-center px-5">Type a Number</h2>
+          <h2 class="text-xl font-bold text-black shadow-xl text-center px-5">Type a Number</h2>
           <input
             type="tel"
             name="number"
@@ -29,25 +27,21 @@
       </div>
     </div>
     <div class="animate__animated animate__fadeInDown">
-      <div
-        class="rounded-lg bg-white shadow-lg p-8 text-gray-800"
-        style="max-width: auto">
-        <p class="text-lg mb-4 font-bold text-yellow-800 shadow-xl text-center px-5">
-          Result
-        </p>
-        <h3 class="shadow-xl mb-4">
+      <div class="flex flex-wrap flex-col rounded-lg bg-white shadow-lg p-8 font-bold">
+        <p class="text-2xl mb-4 font-bold text-black shadow-xl text-center px-5">Result</p>
+        <p class="shadow-xl mb-4">
           Decimal :
-          <span class="text-xl text-teal-500 font-bold">{{ decimalNumber }}</span>
-        </h3>
-        <h3 class="shadow-xl mb-4">
-          Binary : <span class="text-xl text-red-500 font-bold">{{ binaryNumber }}</span>
-        </h3>
-        <h3 class="shadow-xl mb-4">
-          Octal : <span class="text-xl text-red-500 font-bold">{{ octaNumber }}</span>
-        </h3>
-        <h3 class="shadow-xl">
-          Hexadecimal : <span class="text-xl text-red-500 font-bold">{{ hexadecNumber }}</span>
-        </h3>
+          <span class="text-2xl text-teal-500 ml-4 font-bold">{{ decimalNumber }}</span>
+        </p>
+        <p class="shadow-xl mb-4">
+          Binary : <span class="text-2xl text-pink-600 ml-4 font-bold">{{ binaryNumber }}</span>
+        </p>
+        <p class="shadow-xl mb-4">
+          Octal : <span class="text-2xl text-pink-600 ml-4 font-bold">{{ octaNumber }}</span>
+        </p>
+        <p class="shadow-xl">
+          Hexadecimal : <span class="text-2xl text-pink-600 ml-4 font-bold">{{ hexadecNumber }}</span>
+        </p>
       </div>
     </div>
   </div>

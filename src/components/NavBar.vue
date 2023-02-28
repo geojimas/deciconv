@@ -1,7 +1,7 @@
 <template>
   <nav class="flex px-4 py-4 justify-center items-center bg-gray-800">
     <div class="text-white">
-      <div class="animate__animated animate__fadeIn">
+      <div class="animate__animated animate__fadeIn text-xl">
         {{ timeString }}
       </div>
     </div>
