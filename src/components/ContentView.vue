@@ -2,21 +2,18 @@
   <div class="mb-auto flex h-screen justify-evenly items-center flex-wrap">
     <div class="animate__animated animate__fadeInDown flex items-center justify-center px-5">
       <div
-        class="mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800"
+        class="rounded-lg bg-white shadow-lg text-gray-800"
         style="max-width: auto">
-        <div class="w-full">
-          <div class="flex items-center flex-col p-5">
-            <h2 class="text-lg font-bold text-gray-800 shadow-xl text-center px-5">
-              Type a Number
-            </h2>
-            <input
-              type="tel"
-              name="number"
-              @keypress="onlyNumber"
-              v-model.number="decimalNumber"
-              @input="calculateNumbers"
-              class="shadow-xl text-xl p-1 m-4 text-black border-4 border-yellow-400 rounded focus:outline-none" />
-            <!-- <button
+        <div class="flex items-center flex-col p-5">
+          <h2 class="text-lg font-bold text-yellow-800 shadow-xl text-center px-5">Type a Number</h2>
+          <input
+            type="tel"
+            name="number"
+            @keypress="onlyNumber"
+            v-model.number="decimalNumber"
+            @input="calculateNumbers"
+            class="shadow-xl text-xl p-1 m-4 text-black font-bold border-4 border-teal-500 rounded focus:outline-none" />
+          <!-- <button
               type="button"
               @click="calculateNumbers"
               class="w-24 rounded group relative inline-block overflow-hidden border-2 border-red-400 p-2 focus:outline-none focus:ring">
@@ -28,32 +25,29 @@
                 Calculate
               </span>
             </button> -->
-          </div>
         </div>
       </div>
     </div>
-    <div class="animate__animated animate__fadeInDown flex items-center justify-center px-5">
+    <div class="animate__animated animate__fadeInDown">
       <div
-        class="mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800"
+        class="rounded-lg bg-white shadow-lg p-8 text-gray-800"
         style="max-width: auto">
-        <div class="w-full">
-          <p class="text-lg mb-4 font-bold underline text-gray-800 shadow-xl text-center px-5">
-            Result
-          </p>
-          <h3 class="shadow-xl mb-2">
-            Decimal :
-            <span class="text-xl text-red-500 font-bold">{{ decimalNumber }}</span>
-          </h3>
-          <h3 class="shadow-xl mb-2">
-            Binary : <span class="text-xl text-red-500 font-bold">{{ binaryNumber }}</span>
-          </h3>
-          <h3 class="shadow-xl mb-2">
-            Octal : <span class="text-xl text-red-500 font-bold">{{ octaNumber }}</span>
-          </h3>
-          <h3 class="shadow-xl">
-            Hexadecimal : <span class="text-xl text-red-500 font-bold">{{ hexadecNumber }}</span>
-          </h3>
-        </div>
+        <p class="text-lg mb-4 font-bold text-yellow-800 shadow-xl text-center px-5">
+          Result
+        </p>
+        <h3 class="shadow-xl mb-4">
+          Decimal :
+          <span class="text-xl text-teal-500 font-bold">{{ decimalNumber }}</span>
+        </h3>
+        <h3 class="shadow-xl mb-4">
+          Binary : <span class="text-xl text-red-500 font-bold">{{ binaryNumber }}</span>
+        </h3>
+        <h3 class="shadow-xl mb-4">
+          Octal : <span class="text-xl text-red-500 font-bold">{{ octaNumber }}</span>
+        </h3>
+        <h3 class="shadow-xl">
+          Hexadecimal : <span class="text-xl text-red-500 font-bold">{{ hexadecNumber }}</span>
+        </h3>
       </div>
     </div>
   </div>
