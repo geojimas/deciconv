@@ -12,6 +12,8 @@
     "@capacitor/cli": "^4.7.0",
     "@capacitor/core": "^4.7.0",
     "@capacitor/ios": "^4.7.0",
+    "@kyvg/vue3-notification": "^2.9.0",
+    "@soerenmartius/vue3-clipboard": "^0.1.2",
     "animate.css": "^4.1.1",
     "vue": "^3.2.45"
   },

@@ -6,6 +6,7 @@ import FooterView from './components/FooterView.vue'
 
 <template>
   <div class="flex flex-col h-screen justify-between">
+    <notifications />
     <NavBar />
     <ContentView />
     <FooterView />

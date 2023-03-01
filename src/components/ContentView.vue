@@ -27,21 +27,67 @@
       </div>
     </div>
     <div class="animate__animated animate__fadeInDown">
-      <div class="flex flex-wrap flex-col rounded-lg bg-white shadow-lg p-8 font-bold">
+      <div
+        style="max-width: 400px"
+        class="flex flex-wrap flex-col rounded-lg bg-white shadow-lg p-8 font-bold">
         <p class="text-2xl mb-4 font-bold text-black shadow-xl text-center px-5">Result</p>
-        <p class="shadow-xl mb-4">
-          Decimal :
-          <span class="text-2xl text-teal-500 ml-4 font-bold">{{ decimalNumber }}</span>
-        </p>
-        <p class="shadow-xl mb-4">
-          Binary : <span class="text-2xl text-pink-600 ml-4 font-bold">{{ binaryNumber }}</span>
-        </p>
-        <p class="shadow-xl mb-4">
-          Octal : <span class="text-2xl text-pink-600 ml-4 font-bold">{{ octaNumber }}</span>
-        </p>
-        <p class="shadow-xl">
-          Hexadecimal : <span class="text-2xl text-pink-600 ml-4 font-bold">{{ hexadecNumber }}</span>
-        </p>
+        <div class="flex items-center mb-2">
+          <p class="shadow-xl">
+            Decimal :
+            <span class="text-2xl text-teal-500 ml-2 font-bold">{{ decimalNumber }}</span>
+          </p>
+          <button
+            v-if="decimalNumber > 0"
+            v-clipboard:copy="decimalNumber"
+            v-clipboard:success="onSuccess"
+            v-clipboard:error="onError"
+            class="text-md rounded-xl border-white p-2 ml-1 hover:bg-slate-100 active:translate-y-0.5 focus:outline-none focus:ring">
+            <CopyIcon />
+          </button>
+        </div>
+        <div class="flex items-center mb-2">
+          <p class="shadow-xl">
+            Binary :
+            <span v-if="binaryNumber > 8" class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ binaryNumber.substring(0, 8) }}...</span
+            >
+          </p>
+          <button
+            v-if="binaryNumber > 0"
+            v-clipboard:copy="binaryNumber"
+            v-clipboard:success="onSuccess"
+            v-clipboard:error="onError"
+            class="text-md rounded-xl border-white p-2 ml-1 hover:bg-slate-100 active:translate-y-0.5 focus:outline-none focus:ring">
+            <CopyIcon />
+          </button>
+        </div>
+        <div class="flex items-center mb-2">
+          <p class="shadow-xl">
+            Octal : <span class="text-2xl text-pink-600 ml-2 font-bold">{{ octaNumber }}</span>
+          </p>
+          <button
+            v-if="octaNumber > 0"
+            v-clipboard:copy="octaNumber"
+            v-clipboard:success="onSuccess"
+            v-clipboard:error="onError"
+            class="text-md rounded-xl border-white p-2 ml-1 hover:bg-slate-100 active:translate-y-0.5 focus:outline-none focus:ring">
+            <CopyIcon />
+          </button>
+        </div>
+        <div class="flex items-center mb-2">
+          <p class="shadow-xl">
+            Hexadecimal :
+            <span class="text-2xl text-pink-600 ml-2 font-bold">{{ hexadecNumber }}</span>
+          </p>
+          <button
+            v-if="hexadecNumber.length > 0"
+            v-clipboard:copy="hexadecNumber"
+            v-clipboard:success="onSuccess"
+            v-clipboard:error="onError"
+            class="text-md rounded-xl border-white p-2 ml-1 hover:bg-slate-100 active:translate-y-0.5 focus:outline-none focus:ring">
+            <CopyIcon />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -49,6 +95,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import CopyIcon from './CopyIcon.vue'
+import { notify } from '@kyvg/vue3-notification'
 
 function onlyNumber($event) {
   // console.log($event.keyCode) // keyCodes value
@@ -68,5 +116,24 @@ function calculateNumbers() {
   binaryNumber.value = decimalNumber.value.toString(2)
   octaNumber.value = decimalNumber.value.toString(8)
   hexadecNumber.value = decimalNumber.value.toString(16)
+}
+
+const onSuccess = () => {
+  notify({
+    title: 'Copied !',
+    text: 'Copied to clipboard !',
+    type: 'success',
+    duration: 2000,
+    speed: 500
+  })
+}
+const onError = () => {
+  notify({
+    title: 'Error',
+    text: "Didn't copy :( '",
+    type: 'error',
+    duration: 2000,
+    speed: 500
+  })
 }
 </script>
