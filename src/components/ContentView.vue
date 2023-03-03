@@ -34,7 +34,16 @@
         <div class="flex items-center mb-2">
           <p class="shadow-xl">
             Decimal :
-            <span class="text-2xl text-teal-500 ml-2 font-bold">{{ decimalNumber }}</span>
+            <span
+              v-if="decimalNumber.toString().length > 10"
+              class="text-2xl text-teal-500 ml-2 font-bold"
+              >{{ decimalNumber.toString().substring(0, 10) }}...</span
+            >
+            <span
+              v-else-if="decimalNumber.toString().length <= 10"
+              class="text-2xl text-teal-500 ml-2 font-bold"
+              >{{ decimalNumber }}</span
+            >
           </p>
           <button
             v-if="decimalNumber > 0"
@@ -48,8 +57,13 @@
         <div class="flex items-center mb-2">
           <p class="shadow-xl">
             Binary :
-            <span v-if="binaryNumber > 8" class="text-2xl text-pink-600 ml-2 font-bold"
-              >{{ binaryNumber.substring(0, 8) }}...</span
+            <span v-if="binaryNumber.length > 10" class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ binaryNumber.substring(0, 10) }}...</span
+            >
+            <span
+              v-else-if="binaryNumber.length <= 10"
+              class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ binaryNumber }}</span
             >
           </p>
           <button
@@ -63,7 +77,15 @@
         </div>
         <div class="flex items-center mb-2">
           <p class="shadow-xl">
-            Octal : <span class="text-2xl text-pink-600 ml-2 font-bold">{{ octaNumber }}</span>
+            Octal :
+            <span v-if="octaNumber.length > 10" class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ octaNumber.substring(0, 10) }}...</span
+            >
+            <span
+              v-else-if="octaNumber.length <= 10"
+              class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ octaNumber }}</span
+            >
           </p>
           <button
             v-if="octaNumber > 0"
@@ -77,7 +99,14 @@
         <div class="flex items-center mb-2">
           <p class="shadow-xl">
             Hexadecimal :
-            <span class="text-2xl text-pink-600 ml-2 font-bold">{{ hexadecNumber }}</span>
+            <span v-if="hexadecNumber.length > 10" class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ hexadecNumber.substring(0, 10) }}...</span
+            >
+            <span
+              v-else-if="hexadecNumber.length <= 10"
+              class="text-2xl text-pink-600 ml-2 font-bold"
+              >{{ hexadecNumber }}</span
+            >
           </p>
           <button
             v-if="hexadecNumber.length > 0"
